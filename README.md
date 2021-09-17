@@ -15,6 +15,10 @@ Python code for exploring data from Divvy and other bike-share companies from U.
 - new_york_city.csv
 - washington.csv
 
+### How to use it
+
+Just update the _csv_ files and run the Python file (_bikeshare.py_).
+
 ### Credits
 
 I really would like to thank Udacity for giving real data (the _csv_ files) for me to explore in the Programming for Data Science with Python Nanodegree program.
