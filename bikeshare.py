@@ -43,7 +43,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello! Let\'s explore some US bike-share data!')
 
     #Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input('Enter the desired city: (Chicago/New York City/Whashington) ').lower()
@@ -119,7 +119,6 @@ def load_data(city, month, day):
     if day != 'all':
         #Filter by day of week to create the new dataframe
         day = DAYS.index(day)
-
         df = df[df['day_of_week'] == day]
 
     return df
@@ -204,7 +203,6 @@ def user_stats(df, washington=False):
         print('\nEarliest birth year:', df['Birth Year'].dropna(axis=0).astype(dtype='int64').min())
         print('Most recent birth year:', df['Birth Year'].dropna(axis=0).astype(dtype='int64').max())
         print('Most common birth year:', df['Birth Year'].dropna(axis=0).astype(dtype='int64').mode()[0])
-
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
 
@@ -217,7 +215,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
 
-        if city == 'washington': #check if city is Washington, as it doesn't have 'Gender' and 'Birth Year' columns
+        if city == 'washington': #check if city is Washington, as it doesn't have 'Gender' nor 'Birth Year' columns
             user_stats(df, True)
         else:
             user_stats(df)
