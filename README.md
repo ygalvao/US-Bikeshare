@@ -8,12 +8,14 @@
 
 Python code for exploring data from Divvy and other bike-share companies from U.S.A. using Pandas.
 
+Also, this is the GitHub project (Project 3) repository for the Programming for Data Science with Python Nanodegree program.
+
 ## Files used
 
 - bikeshare.py
 - chicago.csv
-- new_york_city.csv
-- washington.csv
+- new_york_city.csv (untracked)
+- washington.csv (untracked)
 
 ## How to use it
 
@@ -23,7 +25,7 @@ Just update the _csv_ files and run the Python file (_bikeshare.py_).
 
 ### Where are the _csv_ files?
 
-Because of their size (they have mor than 33 MB each), they were included in the .gitignore in order to not be uploaded to the repository.
+Because of their size (they have mor than 33 MB each), they were included in the .gitignore in order to not be uploaded to the repository. Only chicago.csv was let left from .gitignore to serve as an example.
 
 ## Credits
 
