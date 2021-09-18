@@ -13,7 +13,7 @@ def display_data(pd_series):
     """
     Display data from a Panda Series in chunks of chosen size.
     """
-    view_data = 'Y' 
+    view_data = 'Y'
     chunk_size = -1
 
     while chunk_size < 0:
@@ -45,7 +45,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    #Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs 
+    #Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input('Enter the desired city: (Chicago/New York City/Whashington) ').lower()
 
     if city == 'new york':
@@ -90,16 +90,16 @@ def load_data(city, month, day):
     Returns:
         df - pandas DataFrame containing city data filtered by month and day
     """
-    
+
     #Load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
     #Convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     #Convert the End Time column to datetime
     df['End Time'] = pd.to_datetime(df['End Time'])
-    
+
     dfst = df['Start Time']
 
     #Extract month and day of week from Start Time to create new columns
@@ -107,21 +107,21 @@ def load_data(city, month, day):
     df['day_of_week'] = dfst.dt.dayofweek
 
 
-    #Filter by month if applicable    
-    if month != 'all': 
-        #Use the index of the months list to get the corresponding int        
+    #Filter by month if applicable
+    if month != 'all':
+        #Use the index of the months list to get the corresponding int
         month = MONTHS.index(month) +1
-    
+
         #Filter by month to create the new dataframe
         df = df[df['month'] == month]
 
     #Filter by day of week if applicable    
     if day != 'all':
-        #Filter by day of week to create the new dataframe        
+        #Filter by day of week to create the new dataframe
         day = DAYS.index(day)
-        
+
         df = df[df['day_of_week'] == day]
-    
+
     return df
 
 
@@ -191,11 +191,11 @@ def user_stats(df, washington=False):
 
     #Display counts of user types
     print('Quantity of user types:\n', df['User Type'].value_counts())
-    
+
     if washington:
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
-        
+
     else:
         #Display counts of gender
         print('\nQuantity of genders:\n', df['Gender'].value_counts())
@@ -216,10 +216,10 @@ def main():
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
-   
+
         if city == 'washington': #check if city is Washington, as it doesn't have 'Gender' and 'Birth Year' columns
             user_stats(df, True)
-        else:    
+        else:
             user_stats(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
